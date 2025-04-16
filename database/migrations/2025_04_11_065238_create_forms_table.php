@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('forms', function (Blueprint $table) {
             $table->id();
+            $table->string('zoom_id');
+            $table->string('name');
+            $table->string('zoom_account');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

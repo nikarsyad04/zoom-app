@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('form_responses_values', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('form_response_id');
+            $table->unsignedBigInteger('form_field_id');
+            $table->text('value')->nullable();
             $table->timestamps();
         });
     }

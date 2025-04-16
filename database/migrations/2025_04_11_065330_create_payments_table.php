@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('form_id');
+            $table->decimal('amount', 10, 2);
+            $table->string('payment_status');
+            $table->string('toyyibpay_bill_code')->nullable();
+            $table->timestamp('payment_date')->nullable();
             $table->timestamps();
+
+
         });
     }
 

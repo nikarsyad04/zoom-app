@@ -13,7 +13,16 @@ return new class extends Migration
     {
         Schema::create('form_fields', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('form_id');
+            $table->string('label');
+            $table->string('name');
+            $table->string('type');
+            $table->boolean('required')->default(false);
+            $table->text('options')->nullable();
+            $table->integer('order')->default(0);
             $table->timestamps();
+
+
         });
     }
 

@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('zoos_meetings', function (Blueprint $table) {
             $table->id();
+            $table->string('zoom_id');
+            $table->string('topic');
+            $table->dateTime('start_time');
+            $table->integer('duration');
+            $table->string('join_url');
             $table->timestamps();
         });
     }

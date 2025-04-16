@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('zooms', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id')->unique();
+            $table->string('email')->unique();
+            $table->string('zoom_api_key')->unique();
             $table->timestamps();
         });
     }
